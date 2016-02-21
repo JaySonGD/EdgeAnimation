@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ABB34F2A1C7A067600DAAF27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F291C7A067600DAAF27 /* main.m */; };
+		ABB34F2D1C7A067600DAAF27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F2C1C7A067600DAAF27 /* AppDelegate.m */; };
+		ABB34F301C7A067600DAAF27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F2F1C7A067600DAAF27 /* ViewController.m */; };
+		ABB34F331C7A067600DAAF27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB34F311C7A067600DAAF27 /* Main.storyboard */; };
+		ABB34F351C7A067600DAAF27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB34F341C7A067600DAAF27 /* Assets.xcassets */; };
+		ABB34F381C7A067600DAAF27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB34F361C7A067600DAAF27 /* LaunchScreen.storyboard */; };
+		ABB34F431C7A067600DAAF27 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F421C7A067600DAAF27 /* ____Tests.m */; };
+		ABB34F4E1C7A067600DAAF27 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F4D1C7A067600DAAF27 /* ____UITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABB34F3F1C7A067600DAAF27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABB34F1D1C7A067600DAAF27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABB34F241C7A067600DAAF27;
+			remoteInfo = "边缘动画";
+		};
+		ABB34F4A1C7A067600DAAF27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABB34F1D1C7A067600DAAF27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABB34F241C7A067600DAAF27;
+			remoteInfo = "边缘动画";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ABB34F251C7A067600DAAF27 /* 边缘动画.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "边缘动画.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABB34F291C7A067600DAAF27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ABB34F2B1C7A067600DAAF27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ABB34F2C1C7A067600DAAF27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ABB34F2E1C7A067600DAAF27 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ABB34F2F1C7A067600DAAF27 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ABB34F321C7A067600DAAF27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ABB34F341C7A067600DAAF27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ABB34F371C7A067600DAAF27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ABB34F391C7A067600DAAF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABB34F3E1C7A067600DAAF27 /* 边缘动画Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "边缘动画Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABB34F421C7A067600DAAF27 /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
+		ABB34F441C7A067600DAAF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABB34F491C7A067600DAAF27 /* 边缘动画UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "边缘动画UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABB34F4D1C7A067600DAAF27 /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
+		ABB34F4F1C7A067600DAAF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABB34F221C7A067600DAAF27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABB34F3B1C7A067600DAAF27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABB34F461C7A067600DAAF27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABB34F1C1C7A067600DAAF27 = {
+			isa = PBXGroup;
+			children = (
+				ABB34F271C7A067600DAAF27 /* 边缘动画 */,
+				ABB34F411C7A067600DAAF27 /* 边缘动画Tests */,
+				ABB34F4C1C7A067600DAAF27 /* 边缘动画UITests */,
+				ABB34F261C7A067600DAAF27 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABB34F261C7A067600DAAF27 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABB34F251C7A067600DAAF27 /* 边缘动画.app */,
+				ABB34F3E1C7A067600DAAF27 /* 边缘动画Tests.xctest */,
+				ABB34F491C7A067600DAAF27 /* 边缘动画UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABB34F271C7A067600DAAF27 /* 边缘动画 */ = {
+			isa = PBXGroup;
+			children = (
+				ABB34F2B1C7A067600DAAF27 /* AppDelegate.h */,
+				ABB34F2C1C7A067600DAAF27 /* AppDelegate.m */,
+				ABB34F2E1C7A067600DAAF27 /* ViewController.h */,
+				ABB34F2F1C7A067600DAAF27 /* ViewController.m */,
+				ABB34F311C7A067600DAAF27 /* Main.storyboard */,
+				ABB34F341C7A067600DAAF27 /* Assets.xcassets */,
+				ABB34F361C7A067600DAAF27 /* LaunchScreen.storyboard */,
+				ABB34F391C7A067600DAAF27 /* Info.plist */,
+				ABB34F281C7A067600DAAF27 /* Supporting Files */,
+			);
+			path = "边缘动画";
+			sourceTree = "<group>";
+		};
+		ABB34F281C7A067600DAAF27 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABB34F291C7A067600DAAF27 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABB34F411C7A067600DAAF27 /* 边缘动画Tests */ = {
+			isa = PBXGroup;
+			children = (
+				ABB34F421C7A067600DAAF27 /* ____Tests.m */,
+				ABB34F441C7A067600DAAF27 /* Info.plist */,
+			);
+			path = "边缘动画Tests";
+			sourceTree = "<group>";
+		};
+		ABB34F4C1C7A067600DAAF27 /* 边缘动画UITests */ = {
+			isa = PBXGroup;
+			children = (
+				ABB34F4D1C7A067600DAAF27 /* ____UITests.m */,
+				ABB34F4F1C7A067600DAAF27 /* Info.plist */,
+			);
+			path = "边缘动画UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABB34F241C7A067600DAAF27 /* 边缘动画 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABB34F521C7A067600DAAF27 /* Build configuration list for PBXNativeTarget "边缘动画" */;
+			buildPhases = (
+				ABB34F211C7A067600DAAF27 /* Sources */,
+				ABB34F221C7A067600DAAF27 /* Frameworks */,
+				ABB34F231C7A067600DAAF27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "边缘动画";
+			productName = "边缘动画";
+			productReference = ABB34F251C7A067600DAAF27 /* 边缘动画.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ABB34F3D1C7A067600DAAF27 /* 边缘动画Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABB34F551C7A067600DAAF27 /* Build configuration list for PBXNativeTarget "边缘动画Tests" */;
+			buildPhases = (
+				ABB34F3A1C7A067600DAAF27 /* Sources */,
+				ABB34F3B1C7A067600DAAF27 /* Frameworks */,
+				ABB34F3C1C7A067600DAAF27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABB34F401C7A067600DAAF27 /* PBXTargetDependency */,
+			);
+			name = "边缘动画Tests";
+			productName = "边缘动画Tests";
+			productReference = ABB34F3E1C7A067600DAAF27 /* 边缘动画Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ABB34F481C7A067600DAAF27 /* 边缘动画UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABB34F581C7A067600DAAF27 /* Build configuration list for PBXNativeTarget "边缘动画UITests" */;
+			buildPhases = (
+				ABB34F451C7A067600DAAF27 /* Sources */,
+				ABB34F461C7A067600DAAF27 /* Frameworks */,
+				ABB34F471C7A067600DAAF27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABB34F4B1C7A067600DAAF27 /* PBXTargetDependency */,
+			);
+			name = "边缘动画UITests";
+			productName = "边缘动画UITests";
+			productReference = ABB34F491C7A067600DAAF27 /* 边缘动画UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABB34F1D1C7A067600DAAF27 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = czljcb;
+				TargetAttributes = {
+					ABB34F241C7A067600DAAF27 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = R572233UJT;
+					};
+					ABB34F3D1C7A067600DAAF27 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = R572233UJT;
+						TestTargetID = ABB34F241C7A067600DAAF27;
+					};
+					ABB34F481C7A067600DAAF27 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = R572233UJT;
+						TestTargetID = ABB34F241C7A067600DAAF27;
+					};
+				};
+			};
+			buildConfigurationList = ABB34F201C7A067600DAAF27 /* Build configuration list for PBXProject "边缘动画" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABB34F1C1C7A067600DAAF27;
+			productRefGroup = ABB34F261C7A067600DAAF27 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABB34F241C7A067600DAAF27 /* 边缘动画 */,
+				ABB34F3D1C7A067600DAAF27 /* 边缘动画Tests */,
+				ABB34F481C7A067600DAAF27 /* 边缘动画UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABB34F231C7A067600DAAF27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB34F381C7A067600DAAF27 /* LaunchScreen.storyboard in Resources */,
+				ABB34F351C7A067600DAAF27 /* Assets.xcassets in Resources */,
+				ABB34F331C7A067600DAAF27 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABB34F3C1C7A067600DAAF27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABB34F471C7A067600DAAF27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABB34F211C7A067600DAAF27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB34F301C7A067600DAAF27 /* ViewController.m in Sources */,
+				ABB34F2D1C7A067600DAAF27 /* AppDelegate.m in Sources */,
+				ABB34F2A1C7A067600DAAF27 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABB34F3A1C7A067600DAAF27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB34F431C7A067600DAAF27 /* ____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABB34F451C7A067600DAAF27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB34F4E1C7A067600DAAF27 /* ____UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABB34F401C7A067600DAAF27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABB34F241C7A067600DAAF27 /* 边缘动画 */;
+			targetProxy = ABB34F3F1C7A067600DAAF27 /* PBXContainerItemProxy */;
+		};
+		ABB34F4B1C7A067600DAAF27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABB34F241C7A067600DAAF27 /* 边缘动画 */;
+			targetProxy = ABB34F4A1C7A067600DAAF27 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ABB34F311C7A067600DAAF27 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABB34F321C7A067600DAAF27 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ABB34F361C7A067600DAAF27 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABB34F371C7A067600DAAF27 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ABB34F501C7A067600DAAF27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ABB34F511C7A067600DAAF27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ABB34F531C7A067600DAAF27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "边缘动画/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CZ.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ABB34F541C7A067600DAAF27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "边缘动画/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CZ.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		ABB34F561C7A067600DAAF27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "边缘动画Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CZ.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/边缘动画.app/边缘动画";
+			};
+			name = Debug;
+		};
+		ABB34F571C7A067600DAAF27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "边缘动画Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CZ.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/边缘动画.app/边缘动画";
+			};
+			name = Release;
+		};
+		ABB34F591C7A067600DAAF27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "边缘动画UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CZ.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "边缘动画";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		ABB34F5A1C7A067600DAAF27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "边缘动画UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CZ.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "边缘动画";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABB34F201C7A067600DAAF27 /* Build configuration list for PBXProject "边缘动画" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABB34F501C7A067600DAAF27 /* Debug */,
+				ABB34F511C7A067600DAAF27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABB34F521C7A067600DAAF27 /* Build configuration list for PBXNativeTarget "边缘动画" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABB34F531C7A067600DAAF27 /* Debug */,
+				ABB34F541C7A067600DAAF27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ABB34F551C7A067600DAAF27 /* Build configuration list for PBXNativeTarget "边缘动画Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABB34F561C7A067600DAAF27 /* Debug */,
+				ABB34F571C7A067600DAAF27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ABB34F581C7A067600DAAF27 /* Build configuration list for PBXNativeTarget "边缘动画UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABB34F591C7A067600DAAF27 /* Debug */,
+				ABB34F5A1C7A067600DAAF27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABB34F1D1C7A067600DAAF27 /* Project object */;
+}
