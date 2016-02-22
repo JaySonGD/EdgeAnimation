@@ -15,6 +15,7 @@
 		ABB34F381C7A067600DAAF27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB34F361C7A067600DAAF27 /* LaunchScreen.storyboard */; };
 		ABB34F431C7A067600DAAF27 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F421C7A067600DAAF27 /* ____Tests.m */; };
 		ABB34F4E1C7A067600DAAF27 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F4D1C7A067600DAAF27 /* ____UITests.m */; };
+		ABB34F5E1C7A0CDB00DAAF27 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F5D1C7A0CDB00DAAF27 /* UIView+Frame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		ABB34F491C7A067600DAAF27 /* 边缘动画UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "边缘动画UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB34F4D1C7A067600DAAF27 /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
 		ABB34F4F1C7A067600DAAF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABB34F5C1C7A0CDB00DAAF27 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		ABB34F5D1C7A0CDB00DAAF27 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		ABB34F271C7A067600DAAF27 /* 边缘动画 */ = {
 			isa = PBXGroup;
 			children = (
+				ABB34F5B1C7A0CDB00DAAF27 /* UIView+Frame */,
 				ABB34F2B1C7A067600DAAF27 /* AppDelegate.h */,
 				ABB34F2C1C7A067600DAAF27 /* AppDelegate.m */,
 				ABB34F2E1C7A067600DAAF27 /* ViewController.h */,
@@ -138,6 +142,15 @@
 				ABB34F4F1C7A067600DAAF27 /* Info.plist */,
 			);
 			path = "边缘动画UITests";
+			sourceTree = "<group>";
+		};
+		ABB34F5B1C7A0CDB00DAAF27 /* UIView+Frame */ = {
+			isa = PBXGroup;
+			children = (
+				ABB34F5C1C7A0CDB00DAAF27 /* UIView+Frame.h */,
+				ABB34F5D1C7A0CDB00DAAF27 /* UIView+Frame.m */,
+			);
+			path = "UIView+Frame";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB34F5E1C7A0CDB00DAAF27 /* UIView+Frame.m in Sources */,
 				ABB34F301C7A067600DAAF27 /* ViewController.m in Sources */,
 				ABB34F2D1C7A067600DAAF27 /* AppDelegate.m in Sources */,
 				ABB34F2A1C7A067600DAAF27 /* main.m in Sources */,
@@ -499,6 +513,7 @@
 				ABB34F541C7A067600DAAF27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABB34F551C7A067600DAAF27 /* Build configuration list for PBXNativeTarget "边缘动画Tests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +522,7 @@
 				ABB34F571C7A067600DAAF27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABB34F581C7A067600DAAF27 /* Build configuration list for PBXNativeTarget "边缘动画UITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +531,7 @@
 				ABB34F5A1C7A067600DAAF27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
