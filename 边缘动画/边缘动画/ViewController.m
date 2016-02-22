@@ -18,6 +18,8 @@
 
 @property (nonatomic ,weak)CAShapeLayer *shapL;
 
+/** <##> */
+@property (nonatomic, weak)    CALayer * grain ;
 @end
 
 @implementation ViewController
@@ -25,10 +27,15 @@
 -(CAShapeLayer *)shapL{
     
     if(_shapL == nil){
+        [[UIColor redColor] setStroke]; // stroke 画线的意思，也就是画笔的笔头颜色
+
         //形状图层(可以根据一个路径,生成一个形状.)
         CAShapeLayer *shap = [CAShapeLayer layer];
-        shap.fillColor = [UIColor blackColor].CGColor;
-        [self.anView.layer insertSublayer:shap atIndex:0];
+        shap.fillColor = [UIColor clearColor].CGColor;
+        shap.strokeColor=[UIColor redColor].CGColor;
+
+        shap.lineCap = kCALineCapRound;
+        [self.anView.layer insertSublayer:shap atIndex:1];
         _shapL = shap;
     }
     return  _shapL;
@@ -37,31 +44,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-//    self.view.backgroundColor = [UIColor orangeColor];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
     self.tableView.contentInset = UIEdgeInsetsMake(1, 0, 0, 0);
     
-    UIView *anView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 1)];
-    anView.backgroundColor = [UIColor redColor];
+    UIView *anView = [[UIView alloc] initWithFrame:CGRectMake(0, 164, self.view.frame.size.width, 100)];
     _anView = anView;
+    anView.backgroundColor = [UIColor redColor];
 
-//    CAGradientLayer *gradient = [CAGradientLayer layer];
-//    gradient.colors = @[  (id)[UIColor greenColor].CGColor , (id)[UIColor blueColor].CGColor ];
-//    gradient.frame = anView.bounds;
-//    
-//    gradient.locations = @[@(0.1) , @(0.6)];
-//    gradient.startPoint = CGPointMake(0, 0);
-//    gradient.endPoint = CGPointMake(0, 1);
-//    
-//    gradient.type = kCAGradientLayerAxial;
-//    
-//    [anView.layer addSublayer:gradient];
-//    _gradient = gradient;
+
+    CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
+    _grain = gradientLayer;
+    gradientLayer.frame = _anView.bounds;
     
-    anView.layer.masksToBounds = YES;
+    [gradientLayer setColors:[NSArray arrayWithObjects:(id)[[UIColor redColor] CGColor],(id)[[UIColor orangeColor] CGColor], nil]];
+    
+    [gradientLayer setLocations:@[@0.1,@0.5]];
+    
+    [gradientLayer setStartPoint:CGPointMake(0, 0)];
+    
+    [gradientLayer setEndPoint:CGPointMake(1, 1)];
+
+    //用progressLayer来截取渐变层 遮罩
+    //[gradientLayer setMask:_shapL];
+    [_anView.layer addSublayer:gradientLayer];
+    
+    NSLog(@"%@",self.parentViewController);
     
     [self.parentViewController.view addSubview:anView];
 }
@@ -77,17 +86,17 @@
    // NSLog(@"%f",scrollView.contentOffset.y);
     
     if (scrollView.contentOffset.y <= -65) {
-        scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -65);
+        scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -64);
     }
     
    CGPoint curpoint = [scrollView.panGestureRecognizer translationInView:scrollView];
     
-    NSLog(@"%f",curpoint.y);
-    
-    if (curpoint.y <100) {
+    if (curpoint.y <100 && curpoint.y > 0) {
         self.shapL.path = ([self pathWithH:(curpoint.y / 100 *100)]).CGPath;
         _anView.height =  curpoint.y / 100 *100 ;
-        _gradient.frame = CGRectMake(0, 0, self.view.frame.size.width, _anView.height);
+        
+        _gradient.frame = _anView.bounds;
+        _grain.frame = _gradient.bounds;
     }
 }
 
@@ -97,20 +106,20 @@
     
 
     
-    CGPoint pointA = CGPointMake(0, 0);
-    CGPoint pointB = CGPointMake(self.view.frame.size.width, 0);
+    CGPoint pointA = CGPointMake(50, 0);
+    CGPoint pointB = CGPointMake(self.view.frame.size.width-50, 0);
     CGPoint pointP = CGPointMake(self.view.frame.size.width/2, 0 + h);
     
     UIBezierPath *path = [UIBezierPath bezierPath];
     //AB
+    [path moveToPoint:pointA];
+    [path addLineToPoint:pointB];
     //[path moveToPoint:pointA];
-    //[path addLineToPoint:pointB];
-    [path moveToPoint:CGPointMake(0, 0)];
     
     //[aPath addQuadCurveToPoint:CGPointMake(120, 100) controlPoint:CGPointMake(70, 0)];
     //曲线
     //BC
-    [path addQuadCurveToPoint:pointB controlPoint:pointP];
+    [path addQuadCurveToPoint:pointA controlPoint:pointP];
     
     //CD
     //[path addLineToPoint:pointD];
@@ -135,11 +144,11 @@
 {
     NSLog(@"%s", __func__);
     [UIView animateWithDuration:0.55 animations:^{
-        _anView.height = 1;
+        _anView.height = 0;
 
-        _gradient.frame = CGRectMake(0, 0, self.view.frame.size.width, _anView.height);
+        _gradient.frame = _anView.bounds;
 
-        _shapL.path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)].CGPath;
+        _shapL.path = [UIBezierPath bezierPathWithRect:_anView.bounds].CGPath;
     }];
     
     
