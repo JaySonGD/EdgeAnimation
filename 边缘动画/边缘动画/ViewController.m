@@ -45,7 +45,7 @@
     self.tableView.contentInset = UIEdgeInsetsMake(1, 0, 0, 0);
     
     UIView *anView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 1)];
-//    anView.backgroundColor = [UIColor redColor];
+    anView.backgroundColor = [UIColor redColor];
     _anView = anView;
 
 //    CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -85,8 +85,8 @@
     NSLog(@"%f",curpoint.y);
     
     if (curpoint.y <100) {
-        self.shapL.path = ([self pathWithH:(curpoint.y / 100 *10)]).CGPath;
-        _anView.height =  curpoint.y / 100 *10;
+        self.shapL.path = ([self pathWithH:(curpoint.y / 100 *100)]).CGPath;
+        _anView.height =  curpoint.y / 100 *100 ;
         _gradient.frame = CGRectMake(0, 0, self.view.frame.size.width, _anView.height);
     }
 }
@@ -99,22 +99,25 @@
     
     CGPoint pointA = CGPointMake(0, 0);
     CGPoint pointB = CGPointMake(self.view.frame.size.width, 0);
-    CGPoint pointP = CGPointMake(self.view.frame.size.width/2, 64 + h);
+    CGPoint pointP = CGPointMake(self.view.frame.size.width/2, 0 + h);
     
     UIBezierPath *path = [UIBezierPath bezierPath];
     //AB
-    [path moveToPoint:pointA];
-    [path addLineToPoint:pointB];
+    //[path moveToPoint:pointA];
+    //[path addLineToPoint:pointB];
+    [path moveToPoint:CGPointMake(0, 0)];
+    
+    //[aPath addQuadCurveToPoint:CGPointMake(120, 100) controlPoint:CGPointMake(70, 0)];
     //曲线
     //BC
-    [path addQuadCurveToPoint:pointA controlPoint:pointP];
+    [path addQuadCurveToPoint:pointB controlPoint:pointP];
     
     //CD
     //[path addLineToPoint:pointD];
     //曲线
     //DA
     //[path addQuadCurveToPoint:pointA controlPoint:pointO];
-    [path addClip];
+    //[path addClip];
     return path;
     
 }
@@ -131,13 +134,15 @@
  -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     NSLog(@"%s", __func__);
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.55 animations:^{
         _anView.height = 1;
 
         _gradient.frame = CGRectMake(0, 0, self.view.frame.size.width, _anView.height);
 
         _shapL.path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)].CGPath;
     }];
+    
+    
 
 }
 
