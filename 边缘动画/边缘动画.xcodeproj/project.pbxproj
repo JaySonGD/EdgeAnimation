@@ -16,7 +16,7 @@
 		ABB34F431C7A067600DAAF27 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F421C7A067600DAAF27 /* ____Tests.m */; };
 		ABB34F4E1C7A067600DAAF27 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F4D1C7A067600DAAF27 /* ____UITests.m */; };
 		ABB34F5E1C7A0CDB00DAAF27 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F5D1C7A0CDB00DAAF27 /* UIView+Frame.m */; };
-		ABB34F611C7ADF4500DAAF27 /* loadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F601C7ADF4500DAAF27 /* loadingView.m */; };
+		ABB34F641C7ADFD400DAAF27 /* loadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB34F631C7ADFD400DAAF27 /* loadingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 		ABB34F4F1C7A067600DAAF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABB34F5C1C7A0CDB00DAAF27 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		ABB34F5D1C7A0CDB00DAAF27 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		ABB34F5F1C7ADF4500DAAF27 /* loadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadingView.h; sourceTree = "<group>"; };
-		ABB34F601C7ADF4500DAAF27 /* loadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loadingView.m; sourceTree = "<group>"; };
+		ABB34F621C7ADFD400DAAF27 /* loadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadingView.h; sourceTree = "<group>"; };
+		ABB34F631C7ADFD400DAAF27 /* loadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loadingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +117,8 @@
 				ABB34F361C7A067600DAAF27 /* LaunchScreen.storyboard */,
 				ABB34F391C7A067600DAAF27 /* Info.plist */,
 				ABB34F281C7A067600DAAF27 /* Supporting Files */,
-				ABB34F5F1C7ADF4500DAAF27 /* loadingView.h */,
-				ABB34F601C7ADF4500DAAF27 /* loadingView.m */,
+				ABB34F621C7ADFD400DAAF27 /* loadingView.h */,
+				ABB34F631C7ADFD400DAAF27 /* loadingView.m */,
 			);
 			path = "边缘动画";
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 			files = (
 				ABB34F5E1C7A0CDB00DAAF27 /* UIView+Frame.m in Sources */,
 				ABB34F301C7A067600DAAF27 /* ViewController.m in Sources */,
-				ABB34F611C7ADF4500DAAF27 /* loadingView.m in Sources */,
+				ABB34F641C7ADFD400DAAF27 /* loadingView.m in Sources */,
 				ABB34F2D1C7A067600DAAF27 /* AppDelegate.m in Sources */,
 				ABB34F2A1C7A067600DAAF27 /* main.m in Sources */,
 			);

@@ -8,37 +8,37 @@
 
 #import "ViewController.h"
 #import "UIView+Frame.h"
+#import "loadingView.h"
 
 @interface ViewController ()
 
 /** <##> */
 @property (nonatomic, weak) UIView *anView;
-/** <##> */
-@property (nonatomic, weak) CAGradientLayer *gradient;
+@property (nonatomic, weak) UIView *anView1;
 
-@property (nonatomic ,weak)CAShapeLayer *shapL;
+@property (nonatomic ,weak)CAShapeLayer *shapL1;
 
-/** <##> */
-@property (nonatomic, weak)    CALayer * grain ;
 @end
 
 @implementation ViewController
 
--(CAShapeLayer *)shapL{
-    
-    if(_shapL == nil){
-        [[UIColor redColor] setStroke]; // stroke 画线的意思，也就是画笔的笔头颜色
 
+-(CAShapeLayer *)shapL1{
+    
+    if(_shapL1 == nil){
+        [[UIColor redColor] setStroke]; // stroke 画线的意思，也就是画笔的笔头颜色
+        
         //形状图层(可以根据一个路径,生成一个形状.)
         CAShapeLayer *shap = [CAShapeLayer layer];
-        shap.fillColor = [UIColor clearColor].CGColor;
-        shap.strokeColor=[UIColor redColor].CGColor;
+        //shap.fillColor = [UIColor colorWithRed:187/255.0 green:222/255.0 blue:231/255.0 alpha:1].CGColor;
+        shap.fillColor = [UIColor colorWithRed:84/255.0 green:184/255.0 blue:213/255.0 alpha:1].CGColor;
 
+        
         shap.lineCap = kCALineCapRound;
-        [self.anView.layer insertSublayer:shap atIndex:1];
-        _shapL = shap;
+        [self.anView1.layer insertSublayer:shap atIndex:1];
+        _shapL1 = shap;
     }
-    return  _shapL;
+    return  _shapL1;
 }
 
 
@@ -47,32 +47,22 @@
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
-    self.tableView.contentInset = UIEdgeInsetsMake(1, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     
-    UIView *anView = [[UIView alloc] initWithFrame:CGRectMake(0, 164, self.view.frame.size.width, 100)];
-    _anView = anView;
-    anView.backgroundColor = [UIColor redColor];
 
 
-    CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-    _grain = gradientLayer;
-    gradientLayer.frame = _anView.bounds;
-    
-    [gradientLayer setColors:[NSArray arrayWithObjects:(id)[[UIColor redColor] CGColor],(id)[[UIColor orangeColor] CGColor], nil]];
-    
-    [gradientLayer setLocations:@[@0.1,@0.5]];
-    
-    [gradientLayer setStartPoint:CGPointMake(0, 0)];
-    
-    [gradientLayer setEndPoint:CGPointMake(1, 1)];
+    UIView *anView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 0)];
+    _anView1 = anView1;
 
-    //用progressLayer来截取渐变层 遮罩
-    //[gradientLayer setMask:_shapL];
-    [_anView.layer addSublayer:gradientLayer];
+    anView1.layer.shadowOffset= CGSizeMake(0, 5);
+    anView1.layer.shadowOpacity = 1;
+    anView1.layer.shadowRadius = 5;
+    anView1.layer.shadowColor = [UIColor colorWithRed:126/255.0 green:192/255.0 blue:231/255.0 alpha:1].CGColor;
+
     
-    NSLog(@"%@",self.parentViewController);
     
-    [self.parentViewController.view addSubview:anView];
+    [self.parentViewController.view addSubview:anView1];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,20 +73,19 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-   // NSLog(@"%f",scrollView.contentOffset.y);
     
     if (scrollView.contentOffset.y <= -65) {
         scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -64);
+        
     }
     
    CGPoint curpoint = [scrollView.panGestureRecognizer translationInView:scrollView];
-    
-    if (curpoint.y <100 && curpoint.y > 0) {
-        self.shapL.path = ([self pathWithH:(curpoint.y / 100 *100)]).CGPath;
-        _anView.height =  curpoint.y / 100 *100 ;
-        
-        _gradient.frame = _anView.bounds;
-        _grain.frame = _gradient.bounds;
+    [self.shapL1 removeAllAnimations];
+    if (curpoint.y <100 && curpoint.y > 0){
+        self.shapL1.path = ([self pathWithH:(curpoint.y / 100 *10)]).CGPath;
+
+        _anView1.height =  curpoint.y / 100 *10 ;
+
     }
 }
 
@@ -114,19 +103,10 @@
     //AB
     [path moveToPoint:pointA];
     [path addLineToPoint:pointB];
-    //[path moveToPoint:pointA];
-    
-    //[aPath addQuadCurveToPoint:CGPointMake(120, 100) controlPoint:CGPointMake(70, 0)];
-    //曲线
+
     //BC
     [path addQuadCurveToPoint:pointA controlPoint:pointP];
     
-    //CD
-    //[path addLineToPoint:pointD];
-    //曲线
-    //DA
-    //[path addQuadCurveToPoint:pointA controlPoint:pointO];
-    //[path addClip];
     return path;
     
 }
@@ -142,16 +122,23 @@
 
  -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    NSLog(@"%s", __func__);
-    [UIView animateWithDuration:0.55 animations:^{
-        _anView.height = 0;
 
-        _gradient.frame = _anView.bounds;
+        _anView1.height = 0;
+ 
 
-        _shapL.path = [UIBezierPath bezierPathWithRect:_anView.bounds].CGPath;
-    }];
-    
-    
+
+    //1.初始化一个核心动画对象
+    CABasicAnimation *anim = [CABasicAnimation animation];
+    //2.设置属性值.
+    anim.keyPath = @"transform.scale.y";
+    anim.toValue = @0.0;
+    anim.duration = 0.25;
+    //设置执行完毕,不要删除动画
+    anim.removedOnCompletion = NO;
+    //设置让动画效果最后执行样子
+    anim.fillMode = kCAFillModeForwards;
+    //3.添加动画
+    [self.shapL1 addAnimation:anim forKey:nil];
 
 }
 
@@ -165,7 +152,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    cell.backgroundColor = [UIColor lightGrayColor];
+    cell.backgroundColor = [UIColor whiteColor];
     
     return cell;
 }
