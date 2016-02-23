@@ -23,7 +23,7 @@
 #pragma mark **************************************************************************************************
 #pragma mark Lazy Load
 
--(CAShapeLayer *)shapL1{
+-(CAShapeLayer *)shapL{
     
     if(_shapL == nil){
         
@@ -114,13 +114,13 @@
     }
     
     CGPoint curpoint = [scrollView.panGestureRecognizer translationInView:scrollView];
-    [self.shapL1 removeAllAnimations];
+    [self.shapL removeAllAnimations];
     if (curpoint.y <100 && curpoint.y > 0 && scrollView.contentOffset.y == -64)
     {
         _anView.hidden = NO;
         
         _anView.height =  curpoint.y / 100 *10 ;
-        self.shapL1.path = ([self pathWithH:_anView.height]).CGPath;
+        self.shapL.path = ([self pathWithH:_anView.height]).CGPath;
         
     }
     else
@@ -155,7 +155,7 @@
     //设置让动画效果最后执行样子
     anim.fillMode = kCAFillModeForwards;
     //3.添加动画
-    [self.shapL1 addAnimation:anim forKey:nil];
+    [self.shapL addAnimation:anim forKey:nil];
     
 }
 
