@@ -31,7 +31,7 @@
         CAShapeLayer *shap = [CAShapeLayer layer];
         //shap.fillColor = [UIColor colorWithRed:187/255.0 green:222/255.0 blue:231/255.0 alpha:1].CGColor;
         shap.fillColor = [UIColor colorWithRed:84/255.0 green:184/255.0 blue:213/255.0 alpha:1].CGColor;
-
+        
         
         shap.lineCap = kCALineCapRound;
         [self.anView.layer insertSublayer:shap atIndex:1];
@@ -50,20 +50,20 @@
     
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     
-
-
+    
+    
     UIView *anView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 0)];
     _anView = anView;
-
+    
     anView.layer.shadowOffset= CGSizeMake(0, 5);
     anView.layer.shadowOpacity = 1;
     anView.layer.shadowRadius = 5;
     anView.layer.shadowColor = [UIColor colorWithRed:126/255.0 green:192/255.0 blue:231/255.0 alpha:1].CGColor;
-
+    
     
     
     [self.parentViewController.view addSubview:anView];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,7 +78,7 @@
 
 - (UIBezierPath *)pathWithH :(CGFloat) h
 {
-
+    
     CGPoint pointA = CGPointMake(50, 0);
     CGPoint pointB = CGPointMake(self.view.frame.size.width-50, 0);
     CGPoint pointP = CGPointMake(self.view.frame.size.width/2, 0 + h);
@@ -87,7 +87,7 @@
     //AB
     [path moveToPoint:pointA];
     [path addLineToPoint:pointB];
-
+    
     //BC
     [path addQuadCurveToPoint:pointA controlPoint:pointP];
     
@@ -107,24 +107,43 @@
         scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -64);
         
     }
+    else if (scrollView.contentOffset.y > scrollView.contentSize.height-self.view.height)
+    {
+        scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x,  scrollView.contentSize.height-self.view.height);
+        
+    }
     
     CGPoint curpoint = [scrollView.panGestureRecognizer translationInView:scrollView];
     [self.shapL1 removeAllAnimations];
-    if (curpoint.y <100 && curpoint.y > 0)
+    if (curpoint.y <100 && curpoint.y > 0 && scrollView.contentOffset.y == -64)
     {
+        _anView.hidden = NO;
+        
         _anView.height =  curpoint.y / 100 *10 ;
         self.shapL1.path = ([self pathWithH:_anView.height]).CGPath;
-
+        
+    }
+    else
+    {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            _anView.hidden = YES;
+        });
+    }
+    
+    NSLog(@"%f--",curpoint.y);
+    
+    if (curpoint.y > -100 && curpoint.y < 0 && scrollView.contentOffset.y == 1024 )
+    {
+        NSLog(@"-----%s", __func__);
     }
 }
 
- -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-
+    
     _anView.height = 0;
- 
-
-
+    
+    
     //1.初始化一个核心动画对象
     CABasicAnimation *anim = [CABasicAnimation animation];
     //2.设置属性值.
@@ -137,8 +156,10 @@
     anim.fillMode = kCAFillModeForwards;
     //3.添加动画
     [self.shapL1 addAnimation:anim forKey:nil];
-
+    
 }
+
+
 
 #pragma mark **************************************************************************************************
 #pragma mark UITableViewDataSource
