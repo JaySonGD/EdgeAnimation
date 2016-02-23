@@ -8,25 +8,24 @@
 
 #import "ViewController.h"
 #import "UIView+Frame.h"
-#import "loadingView.h"
 
 @interface ViewController ()
 
-/** <##> */
 @property (nonatomic, weak) UIView *anView;
-@property (nonatomic, weak) UIView *anView1;
 
-@property (nonatomic ,weak)CAShapeLayer *shapL1;
+@property (nonatomic ,weak) CAShapeLayer *shapL;
 
 @end
 
 @implementation ViewController
 
 
+#pragma mark **************************************************************************************************
+#pragma mark Lazy Load
+
 -(CAShapeLayer *)shapL1{
     
-    if(_shapL1 == nil){
-        [[UIColor redColor] setStroke]; // stroke 画线的意思，也就是画笔的笔头颜色
+    if(_shapL == nil){
         
         //形状图层(可以根据一个路径,生成一个形状.)
         CAShapeLayer *shap = [CAShapeLayer layer];
@@ -35,12 +34,14 @@
 
         
         shap.lineCap = kCALineCapRound;
-        [self.anView1.layer insertSublayer:shap atIndex:1];
-        _shapL1 = shap;
+        [self.anView.layer insertSublayer:shap atIndex:1];
+        _shapL = shap;
     }
-    return  _shapL1;
+    return  _shapL;
 }
 
+#pragma mark **************************************************************************************************
+#pragma mark Life Cyle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,17 +52,17 @@
     
 
 
-    UIView *anView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 0)];
-    _anView1 = anView1;
+    UIView *anView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 0)];
+    _anView = anView;
 
-    anView1.layer.shadowOffset= CGSizeMake(0, 5);
-    anView1.layer.shadowOpacity = 1;
-    anView1.layer.shadowRadius = 5;
-    anView1.layer.shadowColor = [UIColor colorWithRed:126/255.0 green:192/255.0 blue:231/255.0 alpha:1].CGColor;
+    anView.layer.shadowOffset= CGSizeMake(0, 5);
+    anView.layer.shadowOpacity = 1;
+    anView.layer.shadowRadius = 5;
+    anView.layer.shadowColor = [UIColor colorWithRed:126/255.0 green:192/255.0 blue:231/255.0 alpha:1].CGColor;
 
     
     
-    [self.parentViewController.view addSubview:anView1];
+    [self.parentViewController.view addSubview:anView];
 
 }
 
@@ -71,30 +72,13 @@
 }
 
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    
-    if (scrollView.contentOffset.y <= -65) {
-        scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -64);
-        
-    }
-    
-   CGPoint curpoint = [scrollView.panGestureRecognizer translationInView:scrollView];
-    [self.shapL1 removeAllAnimations];
-    if (curpoint.y <100 && curpoint.y > 0){
-        self.shapL1.path = ([self pathWithH:(curpoint.y / 100 *10)]).CGPath;
 
-        _anView1.height =  curpoint.y / 100 *10 ;
+#pragma mark **************************************************************************************************
+#pragma mark Custom Methods
 
-    }
-}
-
-//给定两个圆,返回一个不规则的路径
 - (UIBezierPath *)pathWithH :(CGFloat) h
 {
-    
 
-    
     CGPoint pointA = CGPointMake(50, 0);
     CGPoint pointB = CGPointMake(self.view.frame.size.width-50, 0);
     CGPoint pointP = CGPointMake(self.view.frame.size.width/2, 0 + h);
@@ -111,19 +95,33 @@
     
 }
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
-    NSLog(@"%s", __func__);
-}
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+#pragma mark **************************************************************************************************
+#pragma mark UIScrollViewDelegate
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    
+    if (scrollView.contentOffset.y < -64) {
+        scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -64);
+        
+    }
+    
+    CGPoint curpoint = [scrollView.panGestureRecognizer translationInView:scrollView];
+    [self.shapL1 removeAllAnimations];
+    if (curpoint.y <100 && curpoint.y > 0)
+    {
+        _anView.height =  curpoint.y / 100 *10 ;
+        self.shapL1.path = ([self pathWithH:_anView.height]).CGPath;
+
+    }
 }
 
  -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
 
-        _anView1.height = 0;
+    _anView.height = 0;
  
 
 
@@ -142,17 +140,19 @@
 
 }
 
+#pragma mark **************************************************************************************************
+#pragma mark UITableViewDataSource
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 40;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor colorWithRed:236/255.0 green:236/255.0 blue:236/255.0 alpha:1];
     
     return cell;
 }
