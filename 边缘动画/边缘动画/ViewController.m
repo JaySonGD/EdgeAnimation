@@ -1,9 +1,3 @@
-//
-//  ViewController.m
-//  边缘动画
-//
-//  Copyright © 2016年 czljcb. All rights reserved.
-//
 
 #import "ViewController.h"
 #import "UIView+Frame.h"
@@ -19,7 +13,7 @@
 @implementation ViewController
 
 
-#pragma mark **************************************************************************************************
+
 #pragma mark Lazy Load
 
 -(CAShapeLayer *)shapL{
@@ -39,7 +33,6 @@
     return  _shapL;
 }
 
-#pragma mark **************************************************************************************************
 #pragma mark Life Cyle
 
 - (void)viewDidLoad {
@@ -72,7 +65,7 @@
 
 
 
-#pragma mark **************************************************************************************************
+
 #pragma mark Custom Methods
 
 - (UIBezierPath *)pathWithH :(CGFloat) h
@@ -95,7 +88,6 @@
 }
 
 
-#pragma mark **************************************************************************************************
 #pragma mark UIScrollViewDelegate
 
 
@@ -160,7 +152,6 @@
 
 
 
-#pragma mark **************************************************************************************************
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
