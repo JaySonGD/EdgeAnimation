@@ -13,7 +13,7 @@
 @implementation ViewController
 
 //1.0 debug
-
+//2.0 fixdebug
 #pragma mark Lazy Load
 
 -(CAShapeLayer *)shapL{
